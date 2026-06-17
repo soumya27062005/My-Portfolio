@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI/Data Science Portfolio Design System 
+   Technical, modern aesthetic with neural network inspired gradients
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Clean, technical feel */
+    --background: 0 0% 100%;
+    --foreground: 222 87% 7%;
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 87% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 87% 7%;
+
+    /* Primary - Deep neural network blue */
+    --primary: 217 71% 53%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 217 91% 65%;
+
+    /* Secondary - Warm tech accent */
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted colors for subtle elements */
+    --muted: 220 13% 91%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Electric AI accent */
+    --accent: 168 76% 42%;
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 168 100% 60%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 7%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+
+    /* Interactive elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 71% 53%;
+
+    /* Neural network inspired gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-neural: linear-gradient(135deg, hsl(217 71% 53%), hsl(168 76% 42%), hsl(280 100% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 13% 96%), hsl(220 13% 91%));
+
+    /* Shadows with glow effects */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-accent: 0 10px 30px -10px hsl(var(--accent) / 0.2);
+
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Deep space tech aesthetic */
+    --background: 222 87% 3%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary adjustments for dark mode */
+    --primary: 217 91% 65%;
+    --primary-foreground: 222 87% 7%;
+    --primary-glow: 217 100% 75%;
+
+    --secondary: 215 28% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 168 100% 60%;
+    --accent-foreground: 222 87% 7%;
+    --accent-glow: 168 100% 70%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 100% 60%;
+    --warning-foreground: 48 96% 7%;
+
+    --success: 142 84% 47%;
+    --success-foreground: 0 0% 98%;
+
+    --border: 217 33% 12%;
+    --input: 217 33% 12%;
+    --ring: 217 91% 65%;
+
+    /* Dark mode gradients - more vibrant */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-neural: linear-gradient(135deg, hsl(217 91% 65%), hsl(168 100% 60%), hsl(280 100% 80%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 84% 6%), hsl(222 84% 4%));
+
+    /* Enhanced shadows for dark mode */
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-accent: 0 10px 30px -10px hsl(var(--accent) / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer utilities {
+  /* Typography utilities */
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-neural {
+    background: var(--gradient-neural);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  /* Smooth animations */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bouncy {
+    transition: var(--transition-bouncy);
+  }
+
+  /* Animated background particles */
+  .particles-bg {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--primary-glow) / 0.05) 0%, transparent 50%);
+    background-size: 100% 100%;
+    animation: particles 20s ease-in-out infinite;
+  }
+
+  /* Neural network lines */
+  .neural-lines {
+    background-image: 
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+  }
+}
